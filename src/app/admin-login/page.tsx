@@ -35,9 +35,10 @@ export default function AdminLoginPage() {
       // Redirect ke halaman admin dashboard (ganti sesuai rute dashboard)
       router.push('/admin-home');
       // err -> error
-    } catch (error) {
-      setError('Username atau password salah, Coba lagi.');
-    }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (error) {
+        setError('Username atau password salah, Coba lagi.');
+      }
   };
 
   return (
