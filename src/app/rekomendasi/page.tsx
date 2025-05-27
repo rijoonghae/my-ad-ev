@@ -101,7 +101,7 @@ export default function Rekomendasi() {
                       Tenaga (HP)
                   </label>
                   <select
-                  name="jarak"
+                  name="tenaga"
                   value={formData.tenaga}
                   onChange={handleChange}
                   className="p-3 rounded border border-gray-500 min-w-[250px]"
