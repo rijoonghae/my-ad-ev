@@ -111,12 +111,12 @@ export default function Rekomendasi() {
                   <option value="1">Sangat Rendah</option>
                   <option value="2">Rendah</option>
                   <option value="3">Biasa</option>
-                  <option value="4">Tinggi</option>
-                  <option value="5">Sangat Tinggi</option>
+                  <option value="4">Besar</option>
+                  <option value="5">Sangat Besar</option>
                   </select>
               </div>
 
-              {/* 4 Dropdown Waktu Pengisian POIN:5*/}
+              {/* 4 Dropdown Waktu Pengisian POIN:3*/}
               <div className="mb-4">
                   <label htmlFor="jarak" className="block mb-1 font-semibold whitespace-nowrap">
                       Jarak Tempuh (km)
@@ -128,12 +128,10 @@ export default function Rekomendasi() {
                   className="p-3 rounded border border-gray-500 min-w-[250px]"
                   required
                   >
-                  <option value="" disabled>Pilih Kecepatan</option>
-                  <option value="1">Sangat Cepat</option>
-                  <option value="2">Cepat</option>
-                  <option value="3">Menengah</option>
-                  <option value="4">Lama</option>
-                  <option value="5">Sangat Lama</option>
+                  <option value="" disabled>Kategori Jarak</option>
+                  <option value="1">Dekat</option>
+                  <option value="2">Menengah</option>
+                  <option value="3">Jauh</option>
                   </select>
               </div>
 
