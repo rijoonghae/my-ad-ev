@@ -9,7 +9,7 @@ export default function Home() {
         {/* LOGO */}
         <div className="flex items-center space-x-2">
           <Link href="/">
-              <Image src="/Ada-EV.png" alt="Logo Ada-EV" width={108} height={60} priority/>
+              <Image src="/ADA-EV.png" alt="Logo Ada-EV" width={108} height={60} priority/>
           </Link>
         </div>
 
@@ -25,7 +25,7 @@ export default function Home() {
       <main className="max-w-3xl text-gray-700 mx-auto px-6 py-24">
         <h1 className="text-3xl font-bold mb-6">Selamat datang di Ada-EV</h1>
 
-        <Image src="/Ada-EV.png" alt="Logo Ada-EV" width={108*4.5} height={60} priority/>
+        <Image src="/ADA-EV.png" alt="Logo Ada-EV" width={108*4.5} height={60} priority/>
 
         <p className="text-2xl font-normal max-w-md py-6 text-gray-800">
           Bingung cari mobil listrik? Ada-EV bisa bantu rekomendasiin kamu cari mobil listrik terbaik!

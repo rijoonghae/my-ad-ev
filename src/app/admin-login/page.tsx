@@ -46,7 +46,7 @@ export default function AdminLoginPage() {
 
       <div className="flex items-center justify-center mb-12">
           <Link href="/">
-              <Image src="/Ada-EV.png" alt="Logo Ada-EV" width={108*1.5} height={60*1.5} priority/>
+              <Image src="/ADA-EV.png" alt="Logo Ada-EV" width={108*1.5} height={60*1.5} priority/>
           </Link>
         </div>  
         
