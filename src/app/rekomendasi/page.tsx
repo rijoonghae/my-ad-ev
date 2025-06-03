@@ -36,7 +36,7 @@ export default function Rekomendasi() {
         {/* LOGO */}
         <div className="flex items-center space-x-2">
           <Link href="/">
-              <Image src="/Ada-EV.png" alt="Logo Ada-EV" width={108} height={60} priority/>
+              <Image src="/ADA-EV.png" alt="Logo Ada-EV" width={108} height={60} priority/>
           </Link>
         </div>
 

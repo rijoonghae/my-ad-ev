@@ -9,14 +9,14 @@ export default function ListMobil() {
         {/* LOGO */}
         <div className="flex items-center space-x-2">
           <Link href="/">
-              <Image src="/Ada-EV.png" alt="Logo Ada-EV" width={108} height={60} priority/>
+              <Image src="/ADA-EV.png" alt="Logo Ada-EV" width={108} height={60} priority/>
           </Link>
         </div>
 
         {/* MENU NAVBAR */}
         <div className="flex space-x-8 text-white font-normal text-lg">
-          <Link href="/" className="hover:underline">Rekomendasi</Link>
-          <Link href="/" className="hover:underline">Mobil Listrik</Link>
+          <Link href="/rekomendasi" className="hover:underline">Rekomendasi</Link>
+          <Link href="/list-mobil" className="hover:underline">Mobil Listrik</Link>
           
         </div>
       </nav>
