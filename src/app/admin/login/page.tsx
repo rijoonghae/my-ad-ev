@@ -14,6 +14,8 @@ export default function AdminLoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      console.log('Attempting login with:', { username });
+      
       const res = await fetch('/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -21,15 +23,23 @@ export default function AdminLoginPage() {
       });
 
       const data = await res.json();
+      console.log('Login response:', data);
+      
       if (!res.ok) {
+        console.error('Login failed:', data.message);
         setError(data.message);
         return;
       }
 
-      localStorage.setItem('adminToken', data.token);
+      console.log('Setting cookie with token:', data.token);
+      document.cookie = `admin_token=${data.token}; path=/; max-age=86400; SameSite=Lax`;
+      
+      console.log('Redirecting to dashboard...');
       router.push('/admin/dashboard');
+      router.refresh(); // Force a refresh to ensure the new cookie is used
     } catch (error) {
-      setError('Login failed');
+      console.error('Login error:', error);
+      setError('Login gagal, coba lagi');
     }
   };
 
