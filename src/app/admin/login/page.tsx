@@ -13,8 +13,6 @@ export default function AdminLoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
-
     try {
       const res = await fetch('/api/admin/login', {
         method: 'POST',
@@ -22,42 +20,35 @@ export default function AdminLoginPage() {
         body: JSON.stringify({ username, password }),
       });
 
+      const data = await res.json();
       if (!res.ok) {
-        const data = await res.json();
-        setError(data.message || 'Login gagal');
+        setError(data.message);
         return;
       }
 
-      const data = await res.json();
-      // Simpan token di localStorage atau cookie sesuai kebutuhan
-      localStorage.setItem('token', data.token);
-
-      // Redirect ke halaman admin dashboard (ganti sesuai rute dashboard)
-      router.push('/admin-home');
-      // err -> error
-      } catch (error) {
-        setError('Username atau password salah, Coba lagi.');
-      }
+      localStorage.setItem('adminToken', data.token);
+      router.push('/admin/dashboard');
+    } catch (error) {
+      setError('Login failed');
+    }
   };
 
   return (
     <main className="min-h-screen bg-[#FBD9CD] flex flex-col items-center justify-center px-6">
       <div className="max-w-md w-full bg-[#FBD9CD]">
-
-      <div className="flex items-center justify-center mb-12">
+        <div className="flex items-center justify-center mb-12">
           <Link href="/">
-              <Image src="/ADA-EV.png" alt="Logo Ada-EV" width={108*1.5} height={60*1.5} priority/>
+            <Image src="/ADA-EV.png" alt="Logo Ada-EV" width={108*1.5} height={60*1.5} priority/>
           </Link>
         </div>  
         
         <h1 className="mb-8 text-center text-gray-700 text-3xl font-semibold">Welcome back, Admin</h1>
 
         {error && (
-            <p className="text-red-600 text-center text-sm">{error}</p>
-          )}
+          <p className="text-red-600 text-center text-sm mb-4">{error}</p>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Username input */}
           <div>
             <label htmlFor="username" className="block mb-1 font-medium text-gray-700 pl-4 px-2">
               Username
@@ -72,9 +63,8 @@ export default function AdminLoginPage() {
             />
           </div>
 
-          {/* Password input */}
           <div>
-            <label htmlFor="password" className="block mb-1 font-medium font- text-gray-700 pl-4 px-2">
+            <label htmlFor="password" className="block mb-1 font-medium text-gray-700 pl-4 px-2">
               Password
             </label>
             <input
@@ -87,11 +77,10 @@ export default function AdminLoginPage() {
             />
           </div>
 
-          {/* Submit button */}
           <div className="text-center">
             <button
               type="submit"
-              className="rounded-full border-gray-800 border bg-gray-900 px-15 py-3 text-white  hover:bg-[#F27E68] transition"
+              className="rounded-full border-gray-800 border bg-gray-900 px-15 py-3 text-white hover:bg-[#F27E68] transition"
             >
               Login
             </button>

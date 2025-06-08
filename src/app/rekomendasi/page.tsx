@@ -65,7 +65,7 @@ export default function Rekomendasi() {
                   name="harga"
                   value={formData.harga}
                   onChange={handleChange}
-                  className="p-3 rounded border border-gray-500 min-w-[250px]"
+                  className="p-3 rounded border border-gray-500 w-full"
                   required
                   >
                   <option value="" disabled>Pilih Harga</option>
@@ -85,7 +85,7 @@ export default function Rekomendasi() {
                   name="baterai"
                   value={formData.baterai}
                   onChange={handleChange}
-                  className="p-3 rounded border border-gray-500 min-w-[250px]"
+                  className="p-3 rounded border border-gray-500 w-full"
                   required
                   >
                   <option value="" disabled>Pilih Kapasitas Baterai</option>
@@ -104,7 +104,7 @@ export default function Rekomendasi() {
                   name="tenaga"
                   value={formData.tenaga}
                   onChange={handleChange}
-                  className="p-3 rounded border border-gray-500 min-w-[250px]"
+                  className="p-3 rounded border border-gray-500 w-full"
                   required
                   >
                   <option value="" disabled>Kategori Tenaga</option>
@@ -125,7 +125,7 @@ export default function Rekomendasi() {
                   name="jarak"
                   value={formData.jarak}
                   onChange={handleChange}
-                  className="p-3 rounded border border-gray-500 min-w-[250px]"
+                  className="p-3 rounded border border-gray-500 w-full"
                   required
                   >
                   <option value="" disabled>Kategori Jarak</option>
@@ -144,7 +144,7 @@ export default function Rekomendasi() {
                   name="kecepatan_max"
                   value={formData.kecepatan_max}
                   onChange={handleChange}
-                  className="p-3 rounded border border-gray-500 min-w-[250px]"
+                  className="p-3 rounded border border-gray-500 w-full"
                   required
                   >
                   <option value="" disabled>Kategori Kecepatan</option>
