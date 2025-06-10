@@ -11,9 +11,9 @@ interface MobilListrik {
   merk: string;
   model: string;
   harga: number;
-  kapasitas_baterai: number;
-  tenaga_hp: number;
-  jarak_tempuh: number;
+  baterai: number;
+  tenaga: number;
+  jarak: number;
   kecepatan_maks: number;
 }
 
@@ -115,7 +115,7 @@ export default function AdminDashboard() {
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-2xl font-bold">Daftar Mobil Listrik</h1>
             <Link
-              href="/admin/dashboard/add"
+              href="/admin/add"
               className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
             >
               Tambah Mobil
@@ -149,8 +149,8 @@ export default function AdminDashboard() {
                       <td className="py-2 px-4 border-b">{item.merk}</td>
                       <td className="py-2 px-4 border-b">{item.model}</td>
                       <td className="py-2 px-4 border-b">Rp {item.harga.toLocaleString()}</td>
-                      <td className="py-2 px-4 border-b">{item.kapasitas_baterai} kWh</td>
-                      <td className="py-2 px-4 border-b">{item.tenaga_hp} HP</td>
+                      <td className="py-2 px-4 border-b">{item.baterai} kWh</td>
+                      <td className="py-2 px-4 border-b">{item.tenaga} HP</td>
                       <td className="py-2 px-4 border-b text-center">
                         <div className="flex justify-center space-x-2">
                           <Link

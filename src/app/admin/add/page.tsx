@@ -10,9 +10,9 @@ export default function AddMobil() {
     merk: '',
     model: '',
     harga: '',
-    kapasitas_baterai: '',
-    tenaga_hp: '',
-    jarak_tempuh: '',
+    baterai: '',
+    tenaga: '',
+    jarak: '',
     kecepatan_maks: '',
   });
   const [loading, setLoading] = useState(false);
@@ -23,7 +23,7 @@ export default function AddMobil() {
     const checkAuth = async () => {
       const { data } = await supabase.auth.getSession();
       if (!data.session) {
-        router.push('/admin/login');
+        router.push('/admin/add');
       }
     };
     
@@ -45,9 +45,9 @@ export default function AddMobil() {
         merk: formData.merk,
         model: formData.model,
         harga: parseFloat(formData.harga),
-        kapasitas_baterai: parseFloat(formData.kapasitas_baterai),
-        tenaga_hp: parseFloat(formData.tenaga_hp),
-        jarak_tempuh: parseFloat(formData.jarak_tempuh),
+        baterai: parseFloat(formData.baterai),
+        tenaga: parseFloat(formData.tenaga),
+        jarak: parseFloat(formData.jarak),
         kecepatan_maks: parseFloat(formData.kecepatan_maks),
       };
 
@@ -73,7 +73,7 @@ export default function AddMobil() {
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-2xl font-bold">Tambah Mobil Listrik</h1>
             <Link
-              href="/admin-dashboard"
+              href="/admin/dashboard"
               className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded"
             >
               Kembali
@@ -130,8 +130,8 @@ export default function AddMobil() {
                 </label>
                 <input
                   type="number"
-                  name="kapasitas_baterai"
-                  value={formData.kapasitas_baterai}
+                  name="baterai"
+                  value={formData.baterai}
                   onChange={handleChange}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
@@ -144,8 +144,8 @@ export default function AddMobil() {
                 </label>
                 <input
                   type="number"
-                  name="tenaga_hp"
-                  value={formData.tenaga_hp}
+                  name="tenaga"
+                  value={formData.tenaga}
                   onChange={handleChange}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
@@ -158,8 +158,8 @@ export default function AddMobil() {
                 </label>
                 <input
                   type="number"
-                  name="jarak_tempuh"
-                  value={formData.jarak_tempuh}
+                  name="jarak"
+                  value={formData.jarak}
                   onChange={handleChange}
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   required
